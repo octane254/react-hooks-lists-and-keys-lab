@@ -1,19 +1,30 @@
-import React from "react";
-import NavBar from "./NavBar";
-import Home from "./Home";
-import About from "./About";
-import ProjectList from "./ProjectList";
-import user from "../data/user";
+import React from 'react';
+import NavBar from './NavBar';
+import ProjectList from './ProjectList';
 
-function App() {
-  return (
-    <div>
-      <NavBar />
-      <Home username={user.name} city={user.city} color={user.color} />
-      <About bio={user.bio} links={user.links} />
-      <ProjectList projects={user.projects} />
-    </div>
-  );
-}
+const App = () => {
+    const projects = [
+        {
+            id: 1,
+            name: 'Project One',
+            description: 'Description of Project One',
+            technologies: ['React', 'JavaScript', 'CSS']
+        },
+        {
+            id: 2,
+            name: 'Project Two',
+            description: 'Description of Project Two',
+            technologies: ['Node.js', 'Express', 'MongoDB']
+        },
+        // Add more projects as needed
+    ];
+
+    return (
+        <div>
+            <NavBar />
+            <ProjectList projects={projects} />
+        </div>
+    );
+};
 
 export default App;
